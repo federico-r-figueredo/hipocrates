@@ -1,0 +1,9 @@
+<h1 mat-dialog-title class="text-center">Eliminar Paciente</h1>
+<div mat-dialog-content>
+  <div class="alert alert-danger mt-3 text-center" role="alert">
+      ¿Realmente desea borrar {{patient.name}} de la base de datos?
+  </div>
+  <div mat-dialog-actions class="justify-content-center">
+    <button mat-raised-button color="primary" (click)="deletePatient(patient.$key)">Eliminar Paciente</button>
+  </div>
+</div>

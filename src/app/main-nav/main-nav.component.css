@@ -1,0 +1,25 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: #673ab7;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+::ng-deep .mat-list-base .mat-list-item {
+  color: #fff;
+}
+
+::ng-deep .mat-drawer-side {
+  border-right: solid 1px #fff;
+}
+
+.min-w {
+  min-width: 1216px;
+}

@@ -1,0 +1,80 @@
+<form (ngSubmit)="addPatient()" [formGroup]="firebaseService.form">
+    <h1 mat-dialog-title>Información del Paciente</h1>
+    <div mat-dialog-content>
+  
+      <div class="example-container float-left">
+          <input type="hidden" formControlName="$key">
+        <mat-form-field>
+          <input matInput formControlName="name" placeholder="Nombre" name="firstname">
+          <mat-error>Este campo es obligatorio</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="example-container float-right">
+        <mat-form-field>
+          <mat-select formControlName="provider" placeholder="Proveedor de Salud">
+            <mat-option >
+              Ninguno
+            </mat-option>
+            <ng-container *ngFor="let provider of providersService.providers">
+              <mat-option value="{{provider.$key}}">
+                {{provider.name}}
+              </mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <div class="example-container float-left my-3"> 
+          <mat-radio-group formControlName="gender" name="gender" placeholder="Género" color="primary">
+            <mat-radio-button value="Masculino" color="primary">Masculino</mat-radio-button>
+            <mat-radio-button value="Femenino" class="ml-2" color="primary">Femenino</mat-radio-button>
+          </mat-radio-group>
+      </div>
+  
+      <div class="example-container float-right">
+        <mat-form-field>
+          <input matInput formControlName="age" placeholder="Edad" name="age">
+        </mat-form-field>
+      </div>
+    
+      <div class="example-container float-left">
+        <mat-form-field>
+          <input matInput formControlName="nid" placeholder="D.N.I." name="nid">
+        </mat-form-field>
+      </div>
+    
+      <div class="example-container float-right">
+        <mat-form-field>
+          <input matInput formControlName="phone" placeholder="Teléfono" name="phone">
+          <mat-error *ngIf="firebaseService.form.controls['phone'].errors?.required " >Este campo es obligatorio</mat-error>
+          <mat-error *ngIf="firebaseService.form.controls['phone'].errors?.minlength">Ingrese al menos 7 dígitos</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="example-container float-left">
+        <mat-form-field>
+          <input matInput formControlName="address" placeholder="Dirección" name="address">
+        </mat-form-field>
+      </div>
+
+      <div class="example-container float-right">
+        <mat-form-field>
+          <input matInput formControlName="email" placeholder="Correo Electrónico" name="email">
+          <mat-error>Ingrese un correo electrónico valido</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <div class="example-container float-left w-100">
+        <mat-form-field>
+          <textarea matInput formControlName="comment" placeholder="Comentarios" name="comment"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    
+      <div mat-dialog-actions class="justify-content-center">
+        <button mat-raised-button color="primary" type="submit" >Guardar Cambios</button>
+      </div>
+  </form>
+  
+  

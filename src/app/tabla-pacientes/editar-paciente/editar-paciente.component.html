@@ -1,0 +1,74 @@
+<form (ngSubmit)="updatePatient()">
+  <h1 mat-dialog-title class="text-center">Editar Paciente</h1>
+  <div mat-dialog-content>
+
+    <div class="example-container float-left w-100">
+      <mat-form-field>
+        <input matInput placeholder="Nombre Completo" name="name" [(ngModel)]="patient.name">
+      </mat-form-field>
+    </div>
+
+    <div class="example-container float-right">
+        <mat-form-field>
+          <mat-select placeholder="Proveedor de Salud" [(ngModel)]="patient.provider" name="insurance">
+              <mat-option>
+                  none
+              </mat-option>
+            <ng-container *ngFor="let provider of providersService.providers">
+              <mat-option value="{{provider.$key}}">
+                {{provider.name}}
+              </mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    <div class="example-container float-left">
+      <mat-form-field>
+        <input matInput placeholder="Género" name="gender"  [(ngModel)]="patient.gender">
+      </mat-form-field>
+    </div>
+
+    <div class="example-container float-right">
+      <mat-form-field>
+        <input matInput placeholder="Edad" name="age" [(ngModel)]="patient.age">
+      </mat-form-field>
+    </div>
+  
+    <div class="example-container float-left">
+      <mat-form-field>
+        <input matInput placeholder="D.N.I." name="nid" [(ngModel)]="patient.nid">
+      </mat-form-field>
+    </div>
+  
+    <div class="example-container float-right">
+      <mat-form-field>
+        <input matInput placeholder="Teléfono" name="phone" [(ngModel)]="patient.phone">
+      </mat-form-field>
+    </div>
+
+    <div class="example-container float-left">
+      <mat-form-field>
+        <input matInput placeholder="Dirección" name="address" [(ngModel)]="patient.address">
+      </mat-form-field>
+    </div>
+
+    <div class="example-container float-right">
+      <mat-form-field>
+        <input matInput placeholder="Correo Electrónico" name="email" [(ngModel)] ="patient.email">
+      </mat-form-field>
+    </div>
+
+    <div class="example-container float-left w-100">
+      <mat-form-field>
+        <textarea matInput placeholder="Comentarios" name="comment" [(ngModel)]="patient.comment"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  
+    <div mat-dialog-actions class="justify-content-center">
+      <button mat-raised-button color="primary" type="submit" >Guardar Cambios</button>
+    </div>
+</form>
+
+

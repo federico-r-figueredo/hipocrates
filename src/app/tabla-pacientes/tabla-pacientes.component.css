@@ -1,0 +1,17 @@
+.full-width-table {
+    width: 100%;
+  }
+  ::ng-deep .mat-sort-header-container {
+    display:flex;
+    justify-content:center;
+  }
+  
+  ::ng-deep .dropdown-item {
+    cursor: pointer;
+  }
+.min-width {
+  min-width: 1017px;
+}
+ .spinner {
+   margin-top: 20%;
+ }
