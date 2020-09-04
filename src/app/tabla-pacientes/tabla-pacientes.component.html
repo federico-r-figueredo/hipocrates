@@ -6,8 +6,8 @@
     <mat-form-field class="ml-3" floatLabel="never">
       <input matInput [(ngModel)]="searchKey" placeholder="Buscar" autocomplete="off" (keyup)="applyFilter()">
       <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
-          <mat-icon>close</mat-icon>
-        </button>
+        <mat-icon>close</mat-icon>
+      </button>
     </mat-form-field>
 </div>
 <div class="mat-elevation-z8 min-width">
@@ -94,7 +94,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     <tr mat-footer-row class="justify-content-center" *matFooterRowDef="['loading']" [ngClass]="{'d-none': pacientesTodos.length != 0}"></tr>
   </table>
-  <mat-paginator 
+  <mat-paginator
               [length]="pacientesTodos?.data.length"
               [pageSize]="10"
               [pageSizeOptions]="[2, 5, 10, 25, 100]"

@@ -26,7 +26,7 @@ export interface patient {
   templateUrl: './tabla-pacientes.component.html',
   styleUrls: ['./tabla-pacientes.component.css']
 })
-export class TablaPacientesComponent implements AfterViewInit {
+export class TablaPacientesComponent {
 
   displayedColumns = ['name', 'gender', 'age', 'nid', 'phone', 'address', 'email', 'insurance', 'actions'];
   pacientesTodos = new MatTableDataSource<any>();
@@ -41,7 +41,7 @@ export class TablaPacientesComponent implements AfterViewInit {
           let insuranceName = this.healthnsuranceService.getInsuranceName(item.payload.val()['provider']);
             return {
               $key: item.key,
-              insuranceName, 
+              insuranceName,
               ...item.payload.val()
             };
           });
@@ -49,18 +49,9 @@ export class TablaPacientesComponent implements AfterViewInit {
           this.pacientesTodos.sort = this.sort;
           this.pacientesTodos.paginator = this.paginator;
     });
-    
-  }
-  
-  
-  ngAfterViewInit() {
- 
-  }
-        
 
+  }
 
-    
- 
   openDialog3(paciente): void {
 
     const dialogRef = this.dialog.open( EditarPacienteComponent, {

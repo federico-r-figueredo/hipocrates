@@ -37,7 +37,6 @@ export class FirebaseService {
     });
   }
 
-
   patientList: AngularFireList<any>;
 
    constructor(private db: AngularFireDatabase) {}

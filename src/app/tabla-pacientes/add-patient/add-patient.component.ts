@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 
-import {MAT_DIALOG_DATA} from '@angular/material';
+import { MAT_DIALOG_DATA } from '@angular/material';
 import { patient } from 'src/app/models/patient.model';
 import { FirebaseService } from 'src/app/firebase.service';
 import { HealthInsuranceService } from 'src/app/health-insurance.service';
